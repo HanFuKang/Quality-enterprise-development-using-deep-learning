@@ -16,8 +16,6 @@ This repository contains the implementation of GNN-enhanced time series models f
 ```
 .
 ├── GCN-LSTM/
-├── GCN-BiLSTM/
-├── GCN-GRU/
 └── GCN-Transformer/
 ```
 
@@ -31,24 +29,6 @@ Combines a GCN feature extraction layer with a Long Short-Term Memory (LSTM) net
 | RMSE | MAE | R² |
 |------|-----|----|
 | 0.2609 | 0.1565 | 0.8235 |
-
----
-
-### GCN-BiLSTM
-Extends the GCN-LSTM architecture with a bidirectional LSTM backbone, processing the time series in both forward and backward directions before concatenating hidden states. This captures both past and future temporal context in the economic panel data.
-
-| RMSE | MAE | R² |
-|------|-----|----|
-| 0.2429 | 0.1519 | 0.8468 |
-
----
-
-### GCN-GRU
-Replaces the LSTM backbone with a Gated Recurrent Unit (GRU), which uses update and reset gates rather than the full LSTM cell. This offers reduced parameter count and faster training while retaining strong temporal modelling. GCN features are fed into the GRU input at each time step.
-
-| RMSE | MAE | R² |
-|------|-----|----|
-| 0.2614 | 0.1544 | 0.8228 |
 
 ---
 
@@ -91,9 +71,3 @@ The highest-performing GCN variant. GCN-extracted graph embeddings are combined 
 ```
 
 ---
-
-## Contact
-
-For questions regarding the implementation, please contact the corresponding authors:  
-- Xinye Sha — xs2399@columbia.edu  
-- Kaichen Ouyang — oykc@mail.ustc.edu.cn
